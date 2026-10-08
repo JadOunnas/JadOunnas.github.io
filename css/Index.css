@@ -1,0 +1,1401 @@
+/* =========================================================
+   PORTFOLIO OUNNAS JAD
+   CSS COMPLET
+   THÈME SOMBRE BLEU / VIOLET
+   INDEX + PROJETS + AUTRES PAGES
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --primary: #4b5cff;
+    --primary-hover: #6573ff;
+
+    --secondary: #9b3fd1;
+    --secondary-hover: #b258e5;
+
+    --background: #0f1224;
+    --background-light: #151a35;
+    --background-card: #181d38;
+    --background-dark: #090c18;
+
+    --text: #c8ccdf;
+    --text-light: #ffffff;
+    --muted: #9299b3;
+
+    --border: #272d4a;
+    --border-light: #343b60;
+
+    --gradient: linear-gradient(
+        135deg,
+        #4b5cff,
+        #9b3fd1
+    );
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    color: var(--text);
+
+    background-color: var(--background);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    background: rgba(15, 18, 36, 0.98) !important;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.25);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Logo */
+
+.navbar-brand {
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    color: #ffffff !important;
+
+    transition: all 0.3s ease;
+}
+
+
+.navbar-brand:hover {
+    color: #7c88ff !important;
+
+    transform: translateY(-1px);
+}
+
+
+.navbar-brand .text-primary {
+    color: #6170ff !important;
+}
+
+
+/* Liens navbar */
+
+.navbar .nav-link {
+    color: #c8ccdf !important;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    padding: 8px 12px !important;
+
+    margin-left: 4px;
+
+    border-radius: 7px;
+
+    transition: all 0.25s ease;
+}
+
+
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+
+    background-color: #1c2140 !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* Lien actif */
+
+.navbar .nav-link.active {
+    color: #ffffff !important;
+
+    background-color: #1c2140 !important;
+}
+
+
+/* =========================================================
+   MENU DÉROULANT PROJETS
+   ========================================================= */
+
+/*
+   Important :
+   !important permet d'empêcher Bootstrap
+   de remettre le menu en blanc.
+*/
+
+.navbar .dropdown-menu {
+    background-color: #151a35 !important;
+
+    background: #151a35 !important;
+
+    border: 1px solid #30375a !important;
+
+    border-radius: 10px !important;
+
+    padding: 8px !important;
+
+    margin-top: 10px !important;
+
+    min-width: 225px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+
+/* Items du menu */
+
+.navbar .dropdown-item {
+    background-color: transparent !important;
+
+    color: #c8ccdf !important;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    padding: 11px 14px !important;
+
+    border-radius: 7px;
+
+    transition: all 0.25s ease;
+}
+
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75, 92, 255, 0.30),
+            rgba(155, 63, 209, 0.25)
+        ) !important;
+
+    transform: translateX(3px);
+}
+
+
+/* Item actif */
+
+.navbar .dropdown-item.active {
+    color: #ffffff !important;
+
+    background-color: rgba(75, 92, 255, 0.25) !important;
+}
+
+
+/* Flèche */
+
+.navbar .dropdown-toggle::after {
+    margin-left: 6px;
+
+    vertical-align: middle;
+
+    border-top-color: #c8ccdf;
+}
+
+
+/* =========================================================
+   BOUTON NAVBAR MOBILE
+   ========================================================= */
+
+.navbar-toggler {
+    background-color: #151a35 !important;
+
+    border: 1px solid #3a4164 !important;
+
+    border-radius: 8px;
+
+    padding: 7px 10px;
+}
+
+
+.navbar-toggler:hover {
+    background-color: #202645 !important;
+}
+
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(75, 92, 255, 0.25) !important;
+}
+
+
+/* =========================================================
+   HERO INDEX
+   ========================================================= */
+
+header {
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(75, 92, 255, 0.13),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(155, 63, 209, 0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #0f1224 0%,
+            #151a35 100%
+        );
+
+    overflow: hidden;
+}
+
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -220px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(75, 92, 255, 0.035);
+
+    pointer-events: none;
+}
+
+
+header .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Badge */
+
+header .badge {
+    display: inline-block;
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    color: #ffffff !important;
+
+    background: var(--gradient) !important;
+
+    box-shadow:
+        0 6px 20px rgba(75, 92, 255, 0.15);
+}
+
+
+/* Petit texte */
+
+header .fs-3 {
+    color: #aeb4ca !important;
+
+    font-size: 1.2rem !important;
+
+    font-weight: 400;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Gros titre */
+
+header h1 {
+    color: #ffffff !important;
+
+    font-size: 3.7rem;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.8px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   TEXTE DÉGRADÉ
+   ========================================================= */
+
+.text-gradient {
+    background: var(--gradient);
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-size: 200% auto;
+
+    transition:
+        background-position 0.5s ease;
+}
+
+
+.text-gradient:hover {
+    background-position: right center;
+}
+
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.btn {
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    padding: 12px 22px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Bouton principal */
+
+.btn-primary {
+    background: var(--primary) !important;
+
+    border-color: var(--primary) !important;
+
+    color: #ffffff !important;
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-hover) !important;
+
+    border-color: var(--primary-hover) !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(75, 92, 255, 0.30);
+}
+
+
+/* =========================================================
+   BOUTON PROJETS DE L'INDEX
+   ========================================================= */
+
+/*
+   On empêche le bouton de devenir blanc
+   quand la souris passe dessus.
+*/
+
+.btn-outline-dark {
+    background: transparent !important;
+
+    border: 1px solid #5e678c !important;
+
+    color: #ffffff !important;
+}
+
+
+.btn-outline-dark:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75, 92, 255, 0.18),
+            rgba(155, 63, 209, 0.18)
+        ) !important;
+
+    border-color: #6875ff !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   PHOTO INDEX
+   ========================================================= */
+
+.profile {
+    width: 390px;
+
+    height: 430px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border-radius: 20px;
+
+    box-shadow: none;
+}
+
+
+.profile-img {
+    width: 340px;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 2px solid rgba(255, 255, 255, 0.08);
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.profile-img:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   DÉCORATIONS INDEX
+   ========================================================= */
+
+.dots-1,
+.dots-2,
+.dots-3,
+.dots-4 {
+    position: absolute;
+
+    z-index: 1;
+
+    opacity: 0.07;
+
+    pointer-events: none;
+}
+
+
+.dots-1 {
+    width: 100px;
+
+    top: -20px;
+
+    left: -20px;
+}
+
+
+.dots-2 {
+    width: 80px;
+
+    bottom: -20px;
+
+    right: -20px;
+}
+
+
+.dots-3,
+.dots-4 {
+    display: none;
+}
+
+
+.dots-1 svg,
+.dots-2 svg {
+    width: 100%;
+    height: 100%;
+
+    fill: #6170ff;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section.bg-light {
+    background-color: var(--background-light) !important;
+
+    padding-top: 90px !important;
+
+    padding-bottom: 90px !important;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+
+section h2 {
+    color: #ffffff;
+
+    font-size: 2.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 10px;
+}
+
+
+section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    margin: 18px auto 20px;
+
+    background: var(--gradient);
+
+    border-radius: 3px;
+}
+
+
+section .lead {
+    color: #c8ccdf;
+
+    font-size: 1.05rem;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+
+section .text-muted {
+    color: #9299b3 !important;
+
+    max-width: 720px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CARTES PROJETS
+   ========================================================= */
+
+.project-card {
+    background-color: var(--background-card) !important;
+
+    border: 1px solid var(--border) !important;
+
+    border-radius: 18px !important;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    animation: projectAppear 0.7s ease forwards;
+}
+
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(75, 92, 255, 0.45) !important;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.38) !important;
+}
+
+
+/* Corps de carte */
+
+.project-card .card-body {
+    background-color: var(--background-card) !important;
+
+    color: var(--text) !important;
+}
+
+
+/* Titres projets */
+
+.project-card h2 {
+    color: #ffffff !important;
+
+    font-size: 1.55rem;
+
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 20px;
+}
+
+
+.project-card h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    background: var(--gradient);
+
+    border-radius: 5px;
+
+    margin-top: 15px;
+}
+
+
+/* Texte projets */
+
+.project-card p {
+    color: #aeb4ca !important;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   IMAGES PROJETS
+   ========================================================= */
+
+.project-image {
+    width: 300px;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    margin-right: 35px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.project-card:hover .project-image {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   BOUTON COMPTE RENDU
+   ========================================================= */
+
+.project-card > .btn-primary {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    background: var(--gradient) !important;
+
+    color: #ffffff !important;
+
+    font-weight: 700;
+
+    padding: 14px 22px !important;
+}
+
+
+.project-card > .btn-primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #5b69ff,
+            #aa49dc
+        ) !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    box-shadow:
+        0 -5px 20px rgba(75, 92, 255, 0.15);
+}
+
+
+/* =========================================================
+   SECTION CONTACT
+   ========================================================= */
+
+.bg-gradient-primary-to-secondary {
+    background:
+        linear-gradient(
+            135deg,
+            #4b5cff 0%,
+            #9b3fd1 100%
+        ) !important;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.bg-gradient-primary-to-secondary::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    top: -180px;
+
+    left: -100px;
+}
+
+
+.bg-gradient-primary-to-secondary::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    bottom: -160px;
+
+    right: -100px;
+}
+
+
+.bg-gradient-primary-to-secondary .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.bg-gradient-primary-to-secondary h2 {
+    color: #ffffff !important;
+
+    font-weight: 800;
+}
+
+
+/* Bouton contact */
+
+.bg-gradient-primary-to-secondary .btn-outline-light {
+    background: transparent !important;
+
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+
+    color: #ffffff !important;
+
+    border-radius: 8px;
+}
+
+
+.bg-gradient-primary-to-secondary .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+
+    border-color: #ffffff !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   RÉSEAUX SOCIAUX
+   ========================================================= */
+
+section .fs-2 a {
+    display: inline-flex;
+
+    width: 44px;
+
+    height: 44px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin: 0 4px;
+
+    color: #c8ccdf !important;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+section .fs-2 a:hover {
+    background: #202645;
+
+    color: #ffffff !important;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background-color: var(--background-dark) !important;
+
+    border-top: 1px solid var(--border);
+
+    padding-top: 25px !important;
+
+    padding-bottom: 25px !important;
+}
+
+
+footer .small {
+    color: #777f9d !important;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes projectAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes apparition {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes apparitionPhoto {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+
+}
+
+
+header .col-xxl-5 {
+    animation:
+        apparition 0.7s ease forwards;
+}
+
+
+header .col-xxl-7 {
+    animation:
+        apparitionPhoto 0.8s ease forwards;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLETTE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    header {
+        min-height: auto;
+
+        padding-top: 80px !important;
+
+        padding-bottom: 80px !important;
+
+        text-align: center;
+    }
+
+
+    header h1 {
+        font-size: 3rem;
+
+        letter-spacing: -1px;
+    }
+
+
+    .profile {
+        width: 350px;
+
+        height: 400px;
+
+        margin: 45px auto 0;
+    }
+
+
+    .profile-img {
+        width: 310px;
+
+        height: 370px;
+    }
+
+
+    .project-card .d-flex {
+        flex-direction: column;
+    }
+
+
+    .project-card .p-5 {
+        width: 100%;
+
+        padding: 40px !important;
+    }
+
+
+    .project-image {
+        width: calc(100% - 80px);
+
+        height: 280px;
+
+        margin:
+            0 40px 40px;
+    }
+
+
+    .navbar .dropdown-menu {
+        margin-top: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+
+    .navbar {
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+    }
+
+
+    .navbar .nav-link {
+        margin-left: 0;
+
+        margin-top: 3px;
+
+        margin-bottom: 3px;
+    }
+
+
+    /* Dropdown mobile */
+
+    .navbar .dropdown-menu {
+        background-color: #151a35 !important;
+
+        border-color: #30375a !important;
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.35) !important;
+    }
+
+
+    /* Hero */
+
+    header {
+        padding-top: 60px !important;
+
+        padding-bottom: 60px !important;
+    }
+
+
+    header h1 {
+        font-size: 2.4rem;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    header .fs-3 {
+        font-size: 1.05rem !important;
+    }
+
+
+    header .btn {
+        width: 100%;
+
+        margin-right: 0 !important;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* Photo */
+
+    .profile {
+        width: 280px;
+
+        height: 350px;
+
+        margin-top: 35px;
+    }
+
+
+    .profile-img {
+        width: 250px;
+
+        height: 320px;
+
+        border-radius: 15px;
+    }
+
+
+    .dots-1 {
+        width: 65px;
+
+        left: 0;
+    }
+
+
+    .dots-2 {
+        width: 60px;
+
+        right: 0;
+    }
+
+
+    /* Sections */
+
+    section.bg-light {
+        padding-top: 65px !important;
+
+        padding-bottom: 65px !important;
+    }
+
+
+    section.py-5 {
+        padding-top: 60px !important;
+
+        padding-bottom: 60px !important;
+    }
+
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+
+    /* Projet */
+
+    .project-card {
+        margin-left: 5px;
+
+        margin-right: 5px;
+
+        border-radius: 15px !important;
+    }
+
+
+    .project-card .p-5 {
+        padding: 28px !important;
+    }
+
+
+    .project-card h2 {
+        font-size: 1.25rem;
+    }
+
+
+    .project-card p {
+        font-size: 0.92rem;
+    }
+
+
+    .project-image {
+        width: calc(100% - 56px);
+
+        height: 220px;
+
+        margin:
+            0 28px 28px;
+    }
+
+
+    /* Contact */
+
+    .bg-gradient-primary-to-secondary h2 {
+        font-size: 2rem;
+
+        line-height: 1.3;
+    }
+
+
+    /* Footer */
+
+    footer {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+
+    .profile {
+        width: 240px;
+
+        height: 310px;
+    }
+
+
+    .profile-img {
+        width: 215px;
+
+        height: 280px;
+    }
+
+
+    .dots-1,
+    .dots-2 {
+        display: none;
+    }
+
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .project-card .p-5 {
+        padding: 22px !important;
+    }
+
+
+    .project-card h2 {
+        font-size: 1.15rem;
+    }
+
+
+    .project-image {
+        width: calc(100% - 44px);
+
+        height: 190px;
+
+        margin:
+            0 22px 22px;
+    }
+
+
+    .bg-gradient-primary-to-secondary h2 {
+        font-size: 1.7rem;
+    }
+
+}
+/* =========================================================
+   FOOTER SOMBRE
+   ========================================================= */
+
+footer {
+    background-color: #0a0d19 !important;
+    color: #9299b3 !important;
+    border-top: 1px solid #272d4a;
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}
+
+footer .small {
+    color: #777f9d !important;
+}
+
+footer a {
+    color: #9299b3;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
